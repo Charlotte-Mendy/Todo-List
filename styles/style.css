@@ -1,0 +1,104 @@
+/*& Global */
+/*& ----------------------------------------------------------------------------- */
+
+:root {
+    --blue: #090979;
+    --purple: #c001ff;
+    --white: #fff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*& Body */
+/*& ----------------------------------------------------------------------------- */
+
+body {
+    color: var(--white);
+    font-family: 'Poppins', arial, sans-serif;
+    background: rgb(9, 9, 121);
+    background: linear-gradient(90deg, var(--blue), var(--purple) 100%);
+    min-height: 100vh;
+}
+
+.wrapper {
+    padding: 2rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.glass {
+    background-color: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border: 0px solid rgba(255, 255, 255, 0.18);
+    box-shadow: rgba(142, 142, 142, 0.19) 0px 6px 15px 0px;
+    -webkit-box-shadow: rgba(142, 142, 142, 0.19) 0px 6px 15px 0px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    color: rgba(255, 255, 255, 0.75);
+    padding: 1rem;
+}
+
+header {
+    font-size: 1rem;
+    min-height: 20vh;
+}
+
+form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+}
+
+form input,
+form button {
+    background-color: var(--white);
+    border: none;
+    font-size: 1.3rem;
+    padding: 0.8rem 1.2rem;
+}
+
+form input {
+    border-radius: 1.5rem 0 0 1.5rem;
+    width: 90%;
+}
+
+form button {
+    border-radius: 0 1.5rem 1.5rem 0;
+    color: var(--purple);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    color: var(--white);
+    background-color: var(--blue);
+}
+
+footer {
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    padding: 1rem;
+    position: absolute;
+    bottom: 0;
+}
+
+/*& Media queries */
+/*& ----------------------------------------------------------------------------- */
+
+@media (min-width: 768px) {
+    .glass {
+        width: 60vw;
+    }
+
+    form input {
+        width: 70%;
+    }
+}
