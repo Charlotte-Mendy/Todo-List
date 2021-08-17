@@ -32,6 +32,11 @@ body {
     align-items: center;
 }
 
+header {
+    font-size: 1rem;
+    min-height: 20vh;
+}
+
 .glass {
     background-color: rgba(255, 255, 255, 0.25);
     backdrop-filter: blur(6px);
@@ -43,11 +48,6 @@ body {
     -webkit-border-radius: 12px;
     color: rgba(255, 255, 255, 0.75);
     padding: 1rem;
-}
-
-header {
-    font-size: 1rem;
-    min-height: 20vh;
 }
 
 form {
