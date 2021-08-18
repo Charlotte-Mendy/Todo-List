@@ -32,10 +32,17 @@ function addTask() {
 
         // Creation of a li as task item (task name)
         const taskItem = document.createElement('li');
-        console.log(taskCard);
-        taskItem.innerHTML = 'Task test';
+        // console.log(taskCard);
+        // taskItem.innerHTML = 'Task test';
         taskItem.classList.add('task-item');
         taskCard.appendChild(taskItem);
+
+        // Creation of a button for a completed task
+        const completedButton = document.createElement('button');
+        console.log(completedButton);
+        completedButton.innerHTML = '<i class="fas fa-check"></i>';
+        completedButton.classList.add('complete-btn');
+        taskCard.appendChild(completedButton);
     })
 };
 addTask();
