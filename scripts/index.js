@@ -43,6 +43,12 @@ function addTask() {
         completedButton.innerHTML = '<i class="fas fa-check"></i>';
         completedButton.classList.add('complete-btn');
         taskCard.appendChild(completedButton);
+
+        // Creation of a button for a task to be deleted
+        const deleteButton = document.createElement('button');
+        deleteButton.innerHTML = '<i class="far fa-trash-alt"></i>';
+        deleteButton.classList.add('delete-btn');
+        taskCard.appendChild(deleteButton);
     })
 };
 addTask();
