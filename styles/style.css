@@ -83,7 +83,7 @@ form button:hover {
 }
 
 
-.task-list {
+#task-list {
     display: flex;
     justify-content: center;
     align-items: center;
