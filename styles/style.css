@@ -82,6 +82,43 @@ form button:hover {
     background-color: var(--blue);
 }
 
+
+.task-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+    flex-direction: column;
+}
+
+.task-card {
+    background-color: var(--white);
+    border-radius: 0.5rem;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
+    padding: 1rem;
+    width: 90%;
+}
+
+.task-item {
+    color: var(--blue);
+    list-style-type: none;
+    flex: 1;
+}
+
+.complete-btn,
+.delete-btn {
+    padding: 0.5rem;
+    background-color: var(--white);
+    border: none;
+    cursor: pointer;
+}
+
+.complete-btn {
+    margin-right: 1rem;
+}
+
 footer {
     font-size: 0.8rem;
     margin-top: 1rem;
@@ -98,7 +135,8 @@ footer {
         width: 60vw;
     }
 
-    form input {
+    form input,
+    .task-card {
         width: 70%;
     }
 }
