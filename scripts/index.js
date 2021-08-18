@@ -25,10 +25,17 @@ function addTask() {
         const taskCard = document.createElement('div');
         // Add a class to this task card
         taskCard.classList.add('task-card');
-        console.log(taskCard);
-        taskCard.innerHTML = 'Task card added';
+        // console.log(taskCard);
+        // taskCard.innerHTML = 'Task card added';
         // Append the task card to the task list
         taskList.appendChild(taskCard);
+
+        // Creation of a li as task item (task name)
+        const taskItem = document.createElement('li');
+        console.log(taskCard);
+        taskItem.innerHTML = 'Task test';
+        taskItem.classList.add('task-item');
+        taskCard.appendChild(taskItem);
     })
 };
 addTask();
