@@ -105,18 +105,25 @@ form button:hover {
     color: var(--blue);
     list-style-type: none;
     flex: 1;
+    padding: 0.5rem;
 }
 
 .complete-btn,
 .delete-btn {
+    color: var(--white);
     padding: 0.5rem;
-    background-color: var(--white);
     border: none;
     cursor: pointer;
 }
 
 .complete-btn {
     margin-right: 1rem;
+    background-color: green;
+}
+
+.delete-btn {
+    margin-right: 1rem;
+    background-color: red;
 }
 
 footer {
