@@ -2,11 +2,11 @@
 //& ---------------------------------------------------------------------------
 
 const addTaskInput = document.getElementById('add-task-input');
-console.log(addTaskInput);
+// console.log(addTaskInput);
 const addTaskButton = document.getElementById('add-task-button');
-console.log(addTaskButton);
+// console.log(addTaskButton);
 const taskList = document.getElementById('task-list');
-console.log(taskList);
+// console.log(taskList);
 
 //& Adding a new task
 //& ---------------------------------------------------------------------------
@@ -17,8 +17,6 @@ function addTask() {
         console.log(e);
         e.preventDefault();
 
-        // Todo : create elements : div>li> button*2
-
         // Create & append elements to be shown in the task list
 
         // Creation of a task card : holds a task item (name and action buttons)
@@ -26,20 +24,18 @@ function addTask() {
         // Add a class to this task card
         taskCard.classList.add('task-card');
         // console.log(taskCard);
-        // taskCard.innerHTML = 'Task card added';
         // Append the task card to the task list
         taskList.appendChild(taskCard);
 
         // Creation of a li as task item (task name)
         const taskItem = document.createElement('li');
-        // console.log(taskCard);
-        // taskItem.innerHTML = 'Task test';
+        console.log(taskItem);
+        taskItem.innerHTML = addTaskInput.value;
         taskItem.classList.add('task-item');
         taskCard.appendChild(taskItem);
 
         // Creation of a button for a completed task
         const completedButton = document.createElement('button');
-        console.log(completedButton);
         completedButton.innerHTML = '<i class="fas fa-check"></i>';
         completedButton.classList.add('complete-btn');
         taskCard.appendChild(completedButton);
@@ -49,6 +45,13 @@ function addTask() {
         deleteButton.innerHTML = '<i class="far fa-trash-alt"></i>';
         deleteButton.classList.add('delete-btn');
         taskCard.appendChild(deleteButton);
+
+        // Empty input after submitting a new task
+        clearInput()
     })
 };
 addTask();
+
+function clearInput() {
+    addTaskInput.value = '';
+}
