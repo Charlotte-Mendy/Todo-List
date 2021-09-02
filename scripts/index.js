@@ -7,6 +7,8 @@ const addTaskButton = document.getElementById('add-task-button');
 // console.log(addTaskButton);
 const taskList = document.getElementById('task-list');
 // console.log(taskList);
+const inputWarning = document.getElementById('warning');
+// console.log(inputWarning);
 
 //& Adding a new task
 //& ---------------------------------------------------------------------------
@@ -24,8 +26,15 @@ function addTask() {
 
     function checkInput() {
       if (addTaskInput.value === '') {
-        console.log('Must enter a task !');
+        // Display warning if input is empty
+
+        inputWarning.classList.remove('hide');
+        inputWarning.classList.add('show');
       } else {
+        // Remove warning if input is filled
+        inputWarning.classList.add('hide');
+        inputWarning.classList.remove('show');
+
         // Create & append elements to be shown in the task list
 
         // Creation of a task card : holds a task item (name and action buttons)
