@@ -9,6 +9,8 @@ const taskList = document.getElementById('task-list');
 // console.log(taskList);
 const inputWarning = document.getElementById('warning');
 // console.log(inputWarning);
+const counter = document.getElementById('counter');
+// console.log(counter);
 
 //& Adding a new task
 //& ---------------------------------------------------------------------------
@@ -73,6 +75,10 @@ function addTask() {
 
         // Empty input after submitting a new task
         clearInput();
+
+        // Update task counter by incrementing
+        incrementCounter();
+        // console.log(taskCounter);
       }
     }
   });
@@ -81,6 +87,31 @@ addTask();
 
 function clearInput() {
   addTaskInput.value = '';
+}
+
+//& Updating the task counter
+//& ---------------------------------------------------------------------------
+
+// Counter initialization
+let taskCounter = 0;
+
+// Displays a summary after adding a new task
+function incrementCounter() {
+  taskCounter++;
+  counter.textContent = `You have currently ${taskCounter} ${
+    taskCounter === 1 ? 'task' : 'tasks'
+  }`;
+}
+
+// Displays a summary after removing a task
+function decrementCounter() {
+  taskCounter--;
+  counter.textContent = `You have currently ${taskCounter} ${
+    taskCounter === 1 ? 'task' : 'tasks'
+  }`;
+  if (taskCounter === 0) {
+    counter.textContent = `Well done! You have completed all your tasks`;
+  }
 }
 
 //& Editing a task
@@ -129,5 +160,8 @@ function markDeleted(e) {
     const taskToMarkDeleted = clickedButton.parentElement;
     // console.log(taskToMarkDeleted);
     taskToMarkDeleted.remove();
+    // Update task counter by decrementing
+    decrementCounter();
+    console.log(taskCounter);
   }
 }
