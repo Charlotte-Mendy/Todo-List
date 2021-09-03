@@ -52,6 +52,13 @@ function addTask() {
         taskItem.classList.add('task-item');
         taskCard.appendChild(taskItem);
 
+        // Creation of a button for a editing a task
+        const editButton = document.createElement('button');
+        // console.log(editButton);
+        editButton.innerHTML = '<i class="far fa-edit"></i>';
+        editButton.classList.add('edit-btn');
+        taskCard.appendChild(editButton);
+
         // Creation of a button for a completed task
         const completedButton = document.createElement('button');
         completedButton.innerHTML = '<i class="fas fa-check"></i>';
@@ -76,6 +83,23 @@ function clearInput() {
   addTaskInput.value = '';
 }
 
+//& Editing a task
+//& ---------------------------------------------------------------------------
+taskList.addEventListener('click', editTask);
+
+function editTask(e) {
+  // console.log(e.target);
+  const clickedButton = e.target;
+  if (clickedButton.classList[0] === 'edit-btn') {
+    // console.log('Task is being edited');
+    const taskToEdit = clickedButton.previousSibling;
+    // console.log(taskToEdit);
+    // After edit button clicked, make the task item editable and set a focus on it
+    taskToEdit.contentEditable = 'true';
+    taskToEdit.focus();
+  }
+}
+
 //& Mark a task completed
 //& ---------------------------------------------------------------------------
 
@@ -88,7 +112,7 @@ function markCompleted(e) {
   const clickedButton = e.target;
   if (clickedButton.classList[0] === 'complete-btn') {
     // console.log("Task is completed");
-    const taskToMarkCompleted = clickedButton.previousSibling;
+    const taskToMarkCompleted = clickedButton.parentElement;
     // console.log(taskToMarkCompleted);
     taskToMarkCompleted.classList.add('completed');
   }
