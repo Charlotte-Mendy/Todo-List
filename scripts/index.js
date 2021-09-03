@@ -2,15 +2,14 @@
 //& ---------------------------------------------------------------------------
 
 const addTaskInput = document.getElementById('add-task-input');
-// console.log(addTaskInput);
+
 const addTaskButton = document.getElementById('add-task-button');
-// console.log(addTaskButton);
+
 const taskList = document.getElementById('task-list');
-// console.log(taskList);
+
 const inputWarning = document.getElementById('warning');
-// console.log(inputWarning);
+
 const counter = document.getElementById('counter');
-// console.log(counter);
 
 //& Adding a new task
 //& ---------------------------------------------------------------------------
@@ -18,7 +17,6 @@ const counter = document.getElementById('counter');
 function addTask() {
   // Event listener
   addTaskButton.addEventListener('click', (e) => {
-    console.log(e);
     e.preventDefault();
 
     //& Checking if input is empty at submission and before creating elements
@@ -43,20 +41,20 @@ function addTask() {
         const taskCard = document.createElement('div');
         // Add a class to this task card
         taskCard.classList.add('task-card');
-        // console.log(taskCard);
+
         // Append the task card to the task list
         taskList.appendChild(taskCard);
 
         // Creation of a li as task item (task name)
         const taskItem = document.createElement('li');
-        // console.log(taskItem);
+
         taskItem.innerHTML = addTaskInput.value;
         taskItem.classList.add('task-item');
         taskCard.appendChild(taskItem);
 
         // Creation of a button for a editing a task
         const editButton = document.createElement('button');
-        // console.log(editButton);
+
         editButton.innerHTML = '<i class="far fa-edit"></i>';
         editButton.classList.add('edit-btn');
         taskCard.appendChild(editButton);
@@ -78,7 +76,6 @@ function addTask() {
 
         // Update task counter by incrementing
         incrementCounter();
-        // console.log(taskCounter);
       }
     }
   });
@@ -119,12 +116,10 @@ function decrementCounter() {
 taskList.addEventListener('click', editTask);
 
 function editTask(e) {
-  // console.log(e.target);
   const clickedButton = e.target;
   if (clickedButton.classList[0] === 'edit-btn') {
-    // console.log('Task is being edited');
     const taskToEdit = clickedButton.previousSibling;
-    // console.log(taskToEdit);
+
     // After edit button clicked, make the task item editable and set a focus on it
     taskToEdit.contentEditable = 'true';
     taskToEdit.focus();
@@ -139,12 +134,10 @@ taskList.addEventListener('click', markCompleted);
 taskList.addEventListener('click', markDeleted);
 
 function markCompleted(e) {
-  // console.log(e.target); // => To see exactly what have been clicked
   const clickedButton = e.target;
   if (clickedButton.classList[0] === 'complete-btn') {
-    // console.log("Task is completed");
     const taskToMarkCompleted = clickedButton.parentElement;
-    // console.log(taskToMarkCompleted);
+
     taskToMarkCompleted.classList.add('completed');
   }
 }
@@ -153,15 +146,12 @@ function markCompleted(e) {
 //& ---------------------------------------------------------------------------
 
 function markDeleted(e) {
-  // console.log(e.target);
   const clickedButton = e.target;
   if (clickedButton.classList[0] === 'delete-btn') {
-    // console.log("Task to delete");
     const taskToMarkDeleted = clickedButton.parentElement;
-    // console.log(taskToMarkDeleted);
+
     taskToMarkDeleted.remove();
     // Update task counter by decrementing
     decrementCounter();
-    console.log(taskCounter);
   }
 }
