@@ -109,7 +109,7 @@ form button:hover {
 #counter {
   text-align: center;
   font-size: 1.2rem;
-  margin-top: 2rem;
+  margin: 2rem 0;
 }
 
 #task-list {
